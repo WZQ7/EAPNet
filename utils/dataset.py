@@ -32,17 +32,23 @@ def max_norm(image):
     return narmal_image, _max
 
 
-class ReconDataset(data.Dataset):
 
-    def __init__(self, root, dataset_type='RS', transform=None):
+class Construct_Dataset(data.Dataset):
+
+    def __init__(self, root, dataset_type='RS', data_type='train'):
         self.__ua = []  # Ground Truth
         self.__p0 = []  # p0 images
         self.__tissue = []  # Segmentation images
 
         self.root = os.path.expanduser(root)
         self.dataset_type = dataset_type
-        self.transform = transform
-        folder = root + "/examples/"
+
+        if data_type == 'train':
+            folder = root + "/train_data/"
+        elif data_type == 'validation':
+            folder = root + "/validation_data/"
+        else:
+            folder = root + "/examples/"
 
         for file in os.listdir(folder):
             matdata = scio.loadmat(folder + file)
@@ -72,7 +78,7 @@ class ReconDataset(data.Dataset):
             bk_num = bk.sum()
             tissue_mask = bk
             tissue_num = bk_num
-            bk = bk * (total_num / bk_num / 6 * 4)
+            bk = bk * (total_num / bk_num / 6)
 
             obj1 = (tissue == 2)  # high contrast
             tissue_mask = np.append(tissue_mask, obj1, axis=0)
@@ -142,3 +148,4 @@ class ReconDataset(data.Dataset):
 
     def __len__(self):
         return len(self.__ua)
+
