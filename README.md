@@ -19,11 +19,12 @@ The "main.py" scipt is used for training and validation.
 
 You can directly execute "display.py" to obtain results of example samples, along with visualized images.
 
-The "data" fold contains five subfolds: "RS", "Va", "ST", "AR", "EXP".
+The "data" fold contains five subfolds: "RS", "Va", "ST", "AR", "EXP" and 'mouse'.
 RS: random shape dataset
 Va: vasculature dataset
 ST: sparse target dataset
 AR: acoustic reconstructure dataset
 EXP: phantom data
+mouse: in vivo data
 
 Each subfold comtains the corresponding example samples and the final checkpoint file of the used model.

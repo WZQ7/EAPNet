@@ -32,7 +32,6 @@ def max_norm(image):
     return narmal_image, _max
 
 
-
 class Construct_Dataset(data.Dataset):
 
     def __init__(self, root, dataset_type='RS', data_type='train'):
@@ -148,4 +147,3 @@ class Construct_Dataset(data.Dataset):
 
     def __len__(self):
         return len(self.__ua)
-
