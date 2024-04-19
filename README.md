@@ -28,3 +28,8 @@ EXP: phantom data
 mouse: in vivo data
 
 Each subfold comtains the corresponding example samples and the final checkpoint file of the used model.
+
+Public access datasets involved:
+1. ELCAP Public Lung Image Database: https://www.via.cornell.edu/lungdb.html.
+2. 3D Skin Tissue Vessel Model: https://ieee-dataport.org/documents/3d-skin-tissue-vessel-models-medical-image-analysis.
+3. FIVES:https://figshare.com/articles/figure/FIVES_A_Fundus_Image_Dataset_for_AI-based_Vessel_Segmentation/19688169/1 
